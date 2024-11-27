@@ -1,0 +1,8 @@
+{
+    "clangd.arguments": ["--query-driver=/usr/bin/gcc"],
+    "clangd.fallbackFlags": [
+        "-I/usr/src/linux/include/",
+        "-I/usr/src/linux/arch/x86/include",
+        "-I/usr/src/linux-obj/x86_64/default/arch/x86/include/generated/"
+    ]
+}
