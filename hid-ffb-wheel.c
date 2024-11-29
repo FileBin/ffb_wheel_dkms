@@ -4,8 +4,12 @@
 #include <linux/usb.h>
 
 #include "hid-ffb-wheel.h"
+#include "linux/hid.h"
 #include "linux/input.h"
+#include "linux/list.h"
+#include "linux/types.h"
 #include "pid-descriptor-parser.h"
+#include "pid_def.h"
 
 static const struct hid_device_id ffb_wheel_id_table[] = {
     {HID_DEVICE(HID_BUS_ANY, HID_GROUP_ANY, HID_ANY_ID, HID_ANY_ID)},
@@ -13,6 +17,13 @@ static const struct hid_device_id ffb_wheel_id_table[] = {
 
 static int ffb_wheel_upload(struct input_dev *dev, struct ff_effect *effect,
                      struct ff_effect *old) {
+  struct hid_device *hid = input_get_drvdata(dev);
+
+  const ffb_wheel_ffb_data* data = dev->ff->private;
+
+  struct hid_report report;
+
+  hid_hw_request(hid, 0, HID_REQ_SET_REPORT) ;
   return 0;
 }
 
@@ -40,8 +51,6 @@ static int ffb_wheel_probe(struct hid_device *hdev,
   struct hid_input *hidinput =
       list_entry(hdev->inputs.next, struct hid_input, list);
   struct input_dev *dev = hidinput->input;
-
-
 
   ret = hid_ffb_wheel_parse_descriptor(hdev, dev);
 
