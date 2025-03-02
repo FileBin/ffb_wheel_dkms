@@ -10,7 +10,7 @@ typedef struct {
   struct hid_report *report;
 } hid_safe_report;
 
-void init_hid_safe_report(hid_safe_report * this, struct hid_report* report);
+void init_hid_safe_report(hid_safe_report * self, struct hid_report* report);
 
 typedef struct {
   struct {

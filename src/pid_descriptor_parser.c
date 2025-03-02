@@ -42,7 +42,7 @@ int hid_ffb_wheel_parse_descriptor(struct hid_device *hdev,
         if (field->usage->hid != 0x25)
           continue;
 
-        if(field->usage->hid)
+        // if(field->usage->hid)
       }
       break;
     }

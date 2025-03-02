@@ -12,7 +12,7 @@
 #include "pid_def.h"
 
 static const struct hid_device_id ffb_wheel_id_table[] = {
-    {HID_DEVICE(HID_BUS_ANY, HID_GROUP_ANY, HID_ANY_ID, HID_ANY_ID)},
+    { HID_DEVICE(HID_BUS_ANY, HID_GROUP_ANY, HID_ANY_ID, HID_ANY_ID)},
 };
 
 static int ffb_wheel_upload(struct input_dev *dev, struct ff_effect *effect,
@@ -84,5 +84,6 @@ static struct hid_driver ffb_driver = {
 
 module_hid_driver(ffb_driver);
 
-MODULE_DESCRIPTION("Force Feedback driver for custom steering wheels");
 MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Alexander Mousse <phip1611@gmail.com>");
+MODULE_DESCRIPTION("Force Feedback driver  for custom steering wheels");

@@ -1,11 +1,1 @@
-.q_file_picker
-.cache
-*.o
-*.cmd
-*.mod.c
-*.mod
-.tmp_versions
-*.ko
-Module.symvers
-modules.order
-compile_commands.json
+result*

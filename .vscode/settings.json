@@ -1,8 +1,14 @@
 {
-    "clangd.arguments": ["--query-driver=/usr/bin/gcc"],
     "clangd.fallbackFlags": [
         "-I/usr/src/linux/include/",
         "-I/usr/src/linux/arch/x86/include",
-        "-I/usr/src/linux-obj/x86_64/default/arch/x86/include/generated/"
-    ]
+        "-I/usr/src/linux-obj/x86_64/default/arch/x86/include/generated/",
+    ],
+
+    "clangd.arguments": ["-log=verbose", 
+                         "-pretty", 
+                         "--background-index", 
+                         "--query-driver=/usr/bin/gcc",
+                         "--compile-commands-dir=${workspaceFolder}"],
+    "C_Cpp.intelliSenseEngine": "disabled",
 }
