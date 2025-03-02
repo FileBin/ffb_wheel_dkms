@@ -9,6 +9,8 @@ mkShell {
         ncurses
         bear
         gh
+        hid-tools
+        usbutils
         gnumake
         (vscode-with-extensions.override {
             vscodeExtensions = with vscode-extensions; [
